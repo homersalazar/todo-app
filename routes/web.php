@@ -26,4 +26,7 @@ Route::prefix('users')->group(function () {
 
 Route::prefix('tasks')->group(function () {
     Route::get('/upcoming', [TasksController::class, 'upcoming']);
+    Route::get('/today', [TasksController::class, 'today']);
+    Route::get('/calendar', [TasksController::class, 'calendar']);
+    Route::get('/sticky_wall', [TasksController::class, 'sticky_wall']);
 });
