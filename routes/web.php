@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::prefix('users')->group(function () {
     Route::get('/signin', [UserController::class, 'signin']);
     Route::get('/signup', [UserController::class, 'signup']);
+    Route::post('/signup', [UserController::class, 'register'])->name('user.signup');
+    Route::post('/signin', [UserController::class, 'login'])->name('user.signin');
+    Route::get('/signout', [UserController::class, 'logout']);
 });
 
 Route::prefix('tasks')->group(function () {

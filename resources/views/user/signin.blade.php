@@ -10,13 +10,14 @@
             </div>
         </div>
         <div class="flex flex-col w-full items-center justify-center gap-5">
-            <form class="w-1/2 mx-auto space-y-6">
+            <form method="POST" action="{{ route('user.signin') }}" class="w-1/2 mx-auto space-y-6">
+                @csrf
                 <h1 class="text-3xl font-semibold">Sign in</h1>
                 <div class="mb-5">
-                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@mail.com" required />
+                    <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="name@mail.com" required />
                 </div>
                 <div class="mb-5">
-                    <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Password" required />
+                    <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Password" required />
                 </div>
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full">Sign in</button>
                 <a href="/tasks/upcoming" class="hover:underline hover:underline-blue">go</a>
